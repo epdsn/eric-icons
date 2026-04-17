@@ -1,0 +1,39 @@
+diff --git a/node_modules/fantasticon/dist/chunk-I73JJ2KG.js b/node_modules/fantasticon/dist/chunk-I73JJ2KG.js
+index 3c7ba01..3a7bcde 100644
+--- a/node_modules/fantasticon/dist/chunk-I73JJ2KG.js
++++ b/node_modules/fantasticon/dist/chunk-I73JJ2KG.js
+@@ -176,7 +176,7 @@ import { glob } from "glob";
+ import { resolve as resolve3, relative, join as join2 } from "path";
+ var ASSETS_EXTENSION = "svg";
+ var loadPaths = async (dir) => {
+-  const globPath = join2(dir, `**/*.${ASSETS_EXTENSION}`);
++  const globPath = join2(dir, `**/*.${ASSETS_EXTENSION}`).replace(/\\/g, "/");
+   const files = await glob(globPath, {});
+   if (!files.length) {
+     throw new Error(`No SVGs found in ${dir}`);
+diff --git a/node_modules/fantasticon/dist/cli/index.cjs b/node_modules/fantasticon/dist/cli/index.cjs
+index d37fa52..b4e1917 100644
+--- a/node_modules/fantasticon/dist/cli/index.cjs
++++ b/node_modules/fantasticon/dist/cli/index.cjs
+@@ -282,7 +282,7 @@ var import_glob = require("glob");
+ var import_path6 = require("path");
+ var ASSETS_EXTENSION = "svg";
+ var loadPaths = async (dir) => {
+-  const globPath = (0, import_path6.join)(dir, `**/*.${ASSETS_EXTENSION}`);
++  const globPath = (0, import_path6.join)(dir, `**/*.${ASSETS_EXTENSION}`).replace(/\\/g, "/");
+   const files = await (0, import_glob.glob)(globPath, {});
+   if (!files.length) {
+     throw new Error(`No SVGs found in ${dir}`);
+diff --git a/node_modules/fantasticon/dist/index.cjs b/node_modules/fantasticon/dist/index.cjs
+index 744da25..347560c 100644
+--- a/node_modules/fantasticon/dist/index.cjs
++++ b/node_modules/fantasticon/dist/index.cjs
+@@ -146,7 +146,7 @@ var checkPath = async (filepath, type) => {
+ // src/utils/assets.ts
+ var ASSETS_EXTENSION = "svg";
+ var loadPaths = async (dir) => {
+-  const globPath = (0, import_path5.join)(dir, `**/*.${ASSETS_EXTENSION}`);
++  const globPath = (0, import_path5.join)(dir, `**/*.${ASSETS_EXTENSION}`).replace(/\\/g, "/");
+   const files = await (0, import_glob.glob)(globPath, {});
+   if (!files.length) {
+     throw new Error(`No SVGs found in ${dir}`);
