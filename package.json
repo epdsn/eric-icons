@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node -e \"require('fs').mkdirSync('dist',{recursive:true})\" && fantasticon",
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "readme:icons": "node scripts/update-readme-icons.js",
     "postinstall": "patch-package"
   },
   "keywords": [],

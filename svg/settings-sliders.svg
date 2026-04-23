@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 24 24"
+   fill="currentColor"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="settings-sliders.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="77.208333"
+     inkscape:cx="12"
+     inkscape:cy="12"
+     inkscape:window-width="3840"
+     inkscape:window-height="2071"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <path
+     fill-rule="evenodd"
+     d="M3 5.5a.5.5 0 0 1 .5-.5h10.62a2.8 2.8 0 0 1 3.76 0H20.5a.5.5 0 0 1 0 1h-2.62a2.8 2.8 0 0 1-3.76 0H3.5a.5.5 0 0 1-.5-.5zM3 11.5a.5.5 0 0 1 .5-.5h2.62a2.8 2.8 0 0 1 3.76 0H20.5a.5.5 0 0 1 0 1H9.88a2.8 2.8 0 0 1-3.76 0H3.5a.5.5 0 0 1-.5-.5zM3 17.5a.5.5 0 0 1 .5-.5h8.62a2.8 2.8 0 0 1 3.76 0H20.5a.5.5 0 0 1 0 1h-4.62a2.8 2.8 0 0 1-3.76 0H3.5a.5.5 0 0 1-.5-.5z"
+     clip-rule="evenodd"
+     id="path1" />
+  <circle
+     cx="8"
+     cy="12"
+     r="1.8"
+     id="circle2" />
+  <circle
+     cx="14"
+     cy="18"
+     r="1.8"
+     id="circle3" />
+  <circle
+     style="fill:#000000;stroke:none;stroke-width:5.1"
+     id="path4"
+     cx="14.001079"
+     cy="17.783054"
+     r="1.9816514" />
+  <ellipse
+     style="fill:#000000;stroke:none;stroke-width:5.158"
+     id="path4-5"
+     cx="7.9983807"
+     cy="11.740422"
+     rx="1.9816514"
+     ry="2.0269833" />
+  <circle
+     style="fill:#000000;stroke:none;stroke-width:5.1"
+     id="path4-1"
+     cx="16.0653"
+     cy="5.4409065"
+     r="1.9816514" />
+</svg>

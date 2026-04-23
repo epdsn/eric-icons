@@ -1,9 +1,9 @@
 module.exports = {
   inputDir: './svg',
   outputDir: './dist',
-  name: 'eric-icons',
-  prefix: 'eric',
-  fontTypes: ['woff2', 'woff', 'ttf'],
+  name: 'epicons',
+  prefix: 'ei',
+  fontTypes: ['woff2', 'woff', 'ttf', 'svg'],
   assetTypes: ['css', 'html', 'json'],
   fontsUrl: '.',
   fontHeight: 300,
