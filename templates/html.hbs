@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ name }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ name }}.css" />
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            margin: 0;
+            padding: 16px 20px 120px;
+            text-align: center;
+            background: #fafafa;
+            color: #1a1a1a;
+        }
+        h1 { font-size: 1.5rem; font-weight: 600; margin: 0 0 8px; }
+        .hint {
+            font-size: 0.8125rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .preview {
+            width: 100px;
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: box-shadow 0.15s ease;
+        }
+        .preview:hover, .preview:focus-within {
+            box-shadow: 0 0 0 2px #2563eb;
+        }
+        .preview:focus { outline: none; }
+        .preview .inner {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: #eee;
+            border-radius: 6px 6px 0 0;
+        }
+        .preview .inner > {{ tag }} {
+            line-height: 85px;
+            font-size: 40px;
+            color: #333;
+        }
+        .label {
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 6px 5px;
+            font-size: 10px;
+            font-family: ui-monospace, Monaco, Consolas, monospace;
+            color: #444;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: #ddd;
+            border-radius: 0 0 6px 6px;
+        }
+        .backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.25);
+            z-index: 999;
+        }
+        .backdrop.is-on { display: block; }
+        .icon-popover {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            min-width: 280px;
+            max-width: min(360px, calc(100vw - 24px));
+            padding: 14px 16px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+            text-align: left;
+        }
+        .icon-popover.is-open { display: block; }
+        .icon-popover__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .icon-popover__name {
+            font-family: ui-monospace, Monaco, Consolas, monospace;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            word-break: break-all;
+        }
+        .icon-popover__close {
+            flex-shrink: 0;
+            border: none;
+            background: #f0f0f0;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            line-height: 1;
+            color: #444;
+        }
+        .icon-popover__close:hover { background: #e5e5e5; }
+        .icon-popover__sizes-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .icon-popover__sizes {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 10px 12px;
+            padding: 12px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .size-sample {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .size-sample span {
+            font-size: 0.6875rem;
+            color: #666;
+            font-variant-numeric: tabular-nums;
+        }
+        .size-sample > {{ tag }} {
+            color: #222;
+            line-height: 1;
+        }
+        .icon-popover__code-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #888;
+            margin-bottom: 6px;
+        }
+        .icon-popover__code {
+            margin: 0 0 10px;
+            padding: 10px 12px;
+            background: #1e1e1e;
+            color: #e8e8e8;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            line-height: 1.45;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .icon-popover__copy {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .icon-popover__copy:hover { background: #f5f5f5; }
+        .icon-popover__copy.is-done {
+            border-color: #22c55e;
+            color: #15803d;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>{{ name }}</h1>
+    <p class="hint">Hover an icon for a quick preview, or click to pin the panel (click outside or ✕ to close).</p>
+
+    <div id="backdrop" class="backdrop" aria-hidden="true"></div>
+    <div id="icon-popover" class="icon-popover" role="dialog" aria-modal="false" aria-labelledby="popover-title" hidden>
+        <div class="icon-popover__header">
+            <span id="popover-title" class="icon-popover__name"></span>
+            <button type="button" class="icon-popover__close" aria-label="Close panel">&times;</button>
+        </div>
+        <div class="icon-popover__sizes-label">Sizes</div>
+        <div id="popover-sizes" class="icon-popover__sizes"></div>
+        <div class="icon-popover__code-label">HTML snippet</div>
+        <pre class="icon-popover__code"><code id="popover-code"></code></pre>
+        <button type="button" class="icon-popover__copy" id="popover-copy">Copy HTML</button>
+    </div>
+
+    {{# each assets }}
+        <div class="preview" data-icon-id="{{ @key }}" tabindex="0" role="button" aria-label="Preview icon {{ @key }}">
+            <span class="inner">
+                <{{ ../tag }} class="{{ ../prefix }} {{ ../prefix }}-{{ @key }}"></{{ ../tag }}>
+            </span>
+            <br>
+            <span class="label">{{ @key }}</span>
+        </div>
+    {{/ each }}
+
+    <script>
+(function () {
+    var PREFIX = "{{ prefix }}";
+    var TAG = "{{ tag }}";
+    var FONT_NAME = "{{ name }}";
+    var SIZE_PX = [16, 24, 32, 48];
+
+    var popover = document.getElementById("icon-popover");
+    var backdrop = document.getElementById("backdrop");
+    var titleEl = document.getElementById("popover-title");
+    var sizesEl = document.getElementById("popover-sizes");
+    var codeEl = document.getElementById("popover-code");
+    var copyBtn = document.getElementById("popover-copy");
+    var closeBtn = popover.querySelector(".icon-popover__close");
+
+    var hideTimer = null;
+    var pinned = false;
+    var lastAnchor = null;
+
+    function escapeHtml(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function snippetFor(iconId) {
+        return (
+            '<link rel="stylesheet" href="./' + FONT_NAME + '.css" />\n\n' +
+            '<' + TAG + ' class="' + PREFIX + ' ' + PREFIX + '-' + iconId + '" aria-hidden="true"></' + TAG + '>'
+        );
+    }
+
+    function renderSizes(iconId) {
+        sizesEl.innerHTML = "";
+        var cls = PREFIX + " " + PREFIX + "-" + iconId;
+        SIZE_PX.forEach(function (px) {
+            var wrap = document.createElement("div");
+            wrap.className = "size-sample";
+            var lbl = document.createElement("span");
+            lbl.textContent = px + "px";
+            var el = document.createElement(TAG);
+            el.className = cls;
+            el.setAttribute("aria-hidden", "true");
+            el.style.fontSize = px + "px";
+            wrap.appendChild(lbl);
+            wrap.appendChild(el);
+            sizesEl.appendChild(wrap);
+        });
+    }
+
+    function setContent(iconId) {
+        titleEl.textContent = PREFIX + "-" + iconId;
+        renderSizes(iconId);
+        codeEl.textContent = snippetFor(iconId);
+    }
+
+    function positionNear(anchor) {
+        lastAnchor = anchor;
+        popover.style.visibility = "hidden";
+        popover.classList.add("is-open");
+        popover.hidden = false;
+
+        var pr = popover.getBoundingClientRect();
+        var r = anchor.getBoundingClientRect();
+        var gap = 8;
+        var top = r.bottom + gap;
+        if (top + pr.height > window.innerHeight - gap) {
+            top = r.top - pr.height - gap;
+        }
+        top = Math.max(gap, Math.min(top, window.innerHeight - pr.height - gap));
+        var left = r.left + r.width / 2 - pr.width / 2;
+        left = Math.max(gap, Math.min(left, window.innerWidth - pr.width - gap));
+        popover.style.top = top + "px";
+        popover.style.left = left + "px";
+        popover.style.visibility = "";
+    }
+
+    function show(anchor, doPin) {
+        clearTimeout(hideTimer);
+        copyBtn.classList.remove("is-done");
+        copyBtn.textContent = "Copy HTML";
+        if (!doPin) {
+            pinned = false;
+            backdrop.classList.remove("is-on");
+            popover.setAttribute("aria-modal", "false");
+        }
+        setContent(anchor.getAttribute("data-icon-id"));
+        positionNear(anchor);
+        if (doPin) {
+            pinned = true;
+            backdrop.classList.add("is-on");
+            popover.setAttribute("aria-modal", "true");
+        }
+    }
+
+    function hide() {
+        pinned = false;
+        backdrop.classList.remove("is-on");
+        popover.classList.remove("is-open");
+        popover.hidden = true;
+        popover.setAttribute("aria-modal", "false");
+        lastAnchor = null;
+    }
+
+    function scheduleHide() {
+        if (pinned) return;
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(hide, 180);
+    }
+
+    function cancelHide() {
+        clearTimeout(hideTimer);
+    }
+
+    document.querySelectorAll(".preview").forEach(function (el) {
+        el.addEventListener("mouseenter", function () {
+            show(el, false);
+        });
+        el.addEventListener("mouseleave", scheduleHide);
+        el.addEventListener("focusin", function () {
+            show(el, false);
+        });
+        el.addEventListener("focusout", function (e) {
+            if (!popover.contains(e.relatedTarget)) scheduleHide();
+        });
+        el.addEventListener("click", function (ev) {
+            ev.preventDefault();
+            if (pinned && lastAnchor === el) {
+                hide();
+            } else {
+                show(el, true);
+            }
+        });
+    });
+
+    popover.addEventListener("mouseenter", cancelHide);
+    popover.addEventListener("mouseleave", scheduleHide);
+
+    closeBtn.addEventListener("click", hide);
+    backdrop.addEventListener("click", hide);
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && pinned) hide();
+    });
+
+    copyBtn.addEventListener("click", function () {
+        var text = codeEl.textContent;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+                copyBtn.textContent = "Copied!";
+                copyBtn.classList.add("is-done");
+            }).catch(function () {
+                fallbackCopy(text);
+            });
+        } else {
+            fallbackCopy(text);
+        }
+    });
+
+    function fallbackCopy(text) {
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand("copy");
+            copyBtn.textContent = "Copied!";
+            copyBtn.classList.add("is-done");
+        } catch (err) {}
+        document.body.removeChild(ta);
+    }
+
+    window.addEventListener("resize", function () {
+        if (popover.classList.contains("is-open") && lastAnchor) {
+            positionNear(lastAnchor);
+        }
+    });
+})();
+    </script>
+</body>
+</html>

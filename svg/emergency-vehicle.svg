@@ -1,1 +1,77 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><rect x="8.5" y="3" width="7" height="2.5" rx="0.5"></rect><path fill-rule="evenodd" d="M7.8 7.6A2 2 0 0 1 9.6 6.5h4.8a2 2 0 0 1 1.8 1.1L18 12.5v7.5a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-.5h-5v.5a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-7.5l1.8-4.9zm1.8-.1a1 1 0 0 0-.9.55L7 12.5V20h1.5v-1.5h7V20H17v-7.5l-1.7-4.45a1 1 0 0 0-.9-.55H9.6z" clip-rule="evenodd"></path><rect x="6.5" y="13" width="11" height="1" rx="0.5"></rect><rect x="6.8" y="15" width="3" height="2" rx="0.5"></rect><rect x="14.2" y="15" width="3" height="2" rx="0.5"></rect></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 24 24"
+   fill="currentColor"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="emergency-vehicle.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="22.25"
+     inkscape:cx="18.269663"
+     inkscape:cy="9.7977528"
+     inkscape:window-width="1280"
+     inkscape:window-height="778"
+     inkscape:window-x="1913"
+     inkscape:window-y="719"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <rect
+     x="7.1541095"
+     y="4.1235952"
+     width="3.9389722"
+     height="1.9606742"
+     rx="0.28135517"
+     id="rect1"
+     style="stroke-width:0.664316" />
+  <rect
+     x="12.269663"
+     y="4.1348314"
+     width="3.9389722"
+     height="1.9606742"
+     rx="0.28135517"
+     id="rect1-5"
+     style="stroke-width:0.664316" />
+  <path
+     fill-rule="evenodd"
+     d="m 5.2831461,7.6 c 0.3421311,-0.6790076 1.0396863,-1.1052913 1.8,-1.1 L 16.242697,6.455056 c 0.760313,-0.00529 1.457869,0.4209924 1.8,1.1 l 1.8,4.9 v 7.5 c 0,0.552285 -0.447716,1 -1,1 h -1.5 c -0.552285,0 -1,-0.447715 -1,-1 v -0.5 L 6.9831461,19.5 V 20 c 0,0.552285 -0.4477153,1 -1,1 h -1.5 c -0.5522847,0 -1,-0.447715 -1,-1 v -7.5 z m 1.8,-0.1 c -0.3801569,-0.00265 -0.7289345,0.2104962 -0.9,0.55 l -1.7,4.45 V 20 h 1.5 V 18.5 L 17.342697,18.45506 v 1.5 h 1.5 v -7.5 l -1.7,-4.4499998 c -0.171066,-0.3395038 -0.519844,-0.5526457 -0.9,-0.55 z"
+     clip-rule="evenodd"
+     id="path1"
+     sodipodi:nodetypes="cccccssssccssssccccccccccccccc" />
+  <rect
+     x="3.9382021"
+     y="12.146068"
+     width="15.314607"
+     height="1"
+     rx="0.6025641"
+     id="rect2"
+     style="stroke-width:1.09778" />
+  <rect
+     x="5.9460673"
+     y="14.730337"
+     width="3"
+     height="2"
+     rx="0.5"
+     id="rect3" />
+  <rect
+     x="14.289887"
+     y="14.730337"
+     width="3"
+     height="2"
+     rx="0.5"
+     id="rect4" />
+</svg>
