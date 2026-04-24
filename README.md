@@ -70,38 +70,38 @@ GitHub does not load custom webfonts in README pages, so this gallery embeds eac
 <tr>
 <td align="center" valign="top" width="25%"><img src="svg/menu.svg" width="36" height="36" alt="menu" /><br /><sub><code>ei-menu</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/minimize-panel-left.svg" width="36" height="36" alt="minimize-panel-left" /><br /><sub><code>ei-minimize-panel-left</code></sub></td>
+<td align="center" valign="top" width="25%"><img src="svg/moon.svg" width="36" height="36" alt="moon" /><br /><sub><code>ei-moon</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/network-scan.svg" width="36" height="36" alt="network-scan" /><br /><sub><code>ei-network-scan</code></sub></td>
-<td align="center" valign="top" width="25%"><img src="svg/open.svg" width="36" height="36" alt="open" /><br /><sub><code>ei-open</code></sub></td>
 </tr>
 <tr>
+<td align="center" valign="top" width="25%"><img src="svg/open.svg" width="36" height="36" alt="open" /><br /><sub><code>ei-open</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/refresh.svg" width="36" height="36" alt="refresh" /><br /><sub><code>ei-refresh</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/remove.svg" width="36" height="36" alt="remove" /><br /><sub><code>ei-remove</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/save-device.svg" width="36" height="36" alt="save-device" /><br /><sub><code>ei-save-device</code></sub></td>
-<td align="center" valign="top" width="25%"><img src="svg/save.svg" width="36" height="36" alt="save" /><br /><sub><code>ei-save</code></sub></td>
 </tr>
 <tr>
+<td align="center" valign="top" width="25%"><img src="svg/save.svg" width="36" height="36" alt="save" /><br /><sub><code>ei-save</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/security.svg" width="36" height="36" alt="security" /><br /><sub><code>ei-security</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/settings-sliders.svg" width="36" height="36" alt="settings-sliders" /><br /><sub><code>ei-settings-sliders</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/settings.svg" width="36" height="36" alt="settings" /><br /><sub><code>ei-settings</code></sub></td>
-<td align="center" valign="top" width="25%"><img src="svg/signal-medium.svg" width="36" height="36" alt="signal-medium" /><br /><sub><code>ei-signal-medium</code></sub></td>
 </tr>
 <tr>
+<td align="center" valign="top" width="25%"><img src="svg/signal-medium.svg" width="36" height="36" alt="signal-medium" /><br /><sub><code>ei-signal-medium</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/signal-strong.svg" width="36" height="36" alt="signal-strong" /><br /><sub><code>ei-signal-strong</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/signal-weak.svg" width="36" height="36" alt="signal-weak" /><br /><sub><code>ei-signal-weak</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/sort-a-z.svg" width="36" height="36" alt="sort-a-z" /><br /><sub><code>ei-sort-a-z</code></sub></td>
-<td align="center" valign="top" width="25%"><img src="svg/sort-z-a.svg" width="36" height="36" alt="sort-z-a" /><br /><sub><code>ei-sort-z-a</code></sub></td>
 </tr>
 <tr>
+<td align="center" valign="top" width="25%"><img src="svg/sort-z-a.svg" width="36" height="36" alt="sort-z-a" /><br /><sub><code>ei-sort-z-a</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/three-dots.svg" width="36" height="36" alt="three-dots" /><br /><sub><code>ei-three-dots</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/time-and-date.svg" width="36" height="36" alt="time-and-date" /><br /><sub><code>ei-time-and-date</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/traffic-light.svg" width="36" height="36" alt="traffic-light" /><br /><sub><code>ei-traffic-light</code></sub></td>
-<td align="center" valign="top" width="25%"><img src="svg/transit-vehicle.svg" width="36" height="36" alt="transit-vehicle" /><br /><sub><code>ei-transit-vehicle</code></sub></td>
 </tr>
 <tr>
+<td align="center" valign="top" width="25%"><img src="svg/transit-vehicle.svg" width="36" height="36" alt="transit-vehicle" /><br /><sub><code>ei-transit-vehicle</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/upload.svg" width="36" height="36" alt="upload" /><br /><sub><code>ei-upload</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/user-management.svg" width="36" height="36" alt="user-management" /><br /><sub><code>ei-user-management</code></sub></td>
 <td align="center" valign="top" width="25%"><img src="svg/user.svg" width="36" height="36" alt="user" /><br /><sub><code>ei-user</code></sub></td>
-<td></td>
 </tr>
 </table>
 
@@ -111,8 +111,7 @@ GitHub does not load custom webfonts in README pages, so this gallery embeds eac
 
 1. Put **one SVG per icon** in the `svg/` folder.
 2. The **file name** (without `.svg`) becomes the icon id.
-3. Run `npm run build`.
-4. (Optional) Run `npm run readme:icons` to refresh the **Icon gallery** section below (HTML table generated by [`scripts/update-readme-icons.js`](scripts/update-readme-icons.js)).
+3. Run `npm run build` — this also refreshes the **Icon gallery** section below (via [`scripts/update-readme-icons.js`](scripts/update-readme-icons.js)). To update only the gallery without a font build, run `npm run readme:icons`.
 
 | File           | Icon id | CSS classes (default)   |
 | -------------- | ------- | ----------------------- |
@@ -164,9 +163,9 @@ After changing `fontsUrl` for production (e.g. a CDN base path), run `npm run bu
 
 | Command        | Description |
 | -------------- | ----------- |
-| `npm run build` | Generate fonts and assets into `dist/` |
+| `npm run build` | Generate fonts and assets into `dist/` and refresh the README **Icon gallery** |
 | `npm run clean` | Delete the `dist/` folder |
-| `npm run readme:icons` | Regenerate the README **Icon gallery** from `svg/*.svg` |
+| `npm run readme:icons` | Regenerate only the README **Icon gallery** (no font build) |
 
 ## Build output
 
