@@ -4,7 +4,7 @@
    fill="currentColor"
    version="1.1"
    id="svg2"
-   sodipodi:docname="time-and-date.svg"
+   sodipodi:docname="gauge.svg"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -23,7 +23,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="22.25"
      inkscape:cx="11.977528"
-     inkscape:cy="12"
+     inkscape:cy="12.853933"
      inkscape:window-width="1280"
      inkscape:window-height="778"
      inkscape:window-x="1913"
@@ -31,27 +31,18 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path
-     fill-rule="evenodd"
-     d="M5.5 5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-13zm0 1h13a1 1 0 0 1 1 1v2h-15V7a1 1 0 0 1 1-1zm-1 4h15v9a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1v-9z"
-     clip-rule="evenodd"
+     style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#000000;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1"
+     d="m 12.134766,7.5800781 c -5.7829539,0 -10.4395812,5.0204729 -10.4375004,11.1445309 v 0.634766 H 22.572266 v -0.634766 c 0.0021,-6.124058 -4.654547,-11.1445309 -10.4375,-11.1445309 z m 0,1.2695313 c 4.840791,0 8.731112,4.0743886 9.048828,9.2421876 H 3.0859375 C 3.4036533,12.923998 7.2939743,8.8496094 12.134766,8.8496094 Z"
      id="path1" />
-  <rect
-     x="7.5"
-     y="3"
-     width="1"
-     height="4"
-     rx="0.5"
-     id="rect1" />
-  <rect
-     x="15.5"
-     y="3"
-     width="1"
-     height="4"
-     rx="0.5"
-     id="rect2" />
-  <circle
-     cx="12"
-     cy="14.539326"
-     r="2"
-     id="circle2" />
+  <path
+     d="m 13.67881,16.295081 2.182809,-5.415626 -3.783535,4.409868 z"
+     id="path2"
+     style="stroke-width:0.750278" />
+  <ellipse
+     cx="11.859466"
+     cy="17.950502"
+     id="circle2"
+     rx="1.2866493"
+     ry="1.3789924"
+     style="stroke-width:1.26859" />
 </svg>

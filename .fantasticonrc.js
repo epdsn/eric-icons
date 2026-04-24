@@ -10,4 +10,7 @@ module.exports = {
   normalize: true,
   descent: 50,
   tag: 'i',
+  templates: {
+    html: './templates/html.hbs',
+  },
 };
